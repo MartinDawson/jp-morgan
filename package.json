@@ -3,15 +3,43 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babel/core": "^7.0.0",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.6.0",
+    "babel-preset-react-app": "^5.0.4",
+    "compute-gmean": "^1.1.0",
+    "enzyme": "^3.2.0",
+    "enzyme-adapter-react-16": "^1.1.0",
+    "jest": "^23.6.0",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
-    "react-scripts": "2.0.5"
+    "react-redux": "^5.0.7",
+    "react-scripts": "2.0.5",
+    "recompose": "^0.30.0",
+    "redux": "^4.0.1",
+    "redux-form": "^7.4.2",
+    "redux-mock-store": "^1.5.3",
+    "vwap": "^0.0.2"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "test:unit": "jest .*.test.js"
+  },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "server/config/environment"
+    ],
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|integration))\\.js$",
+    "transform": {
+      "^.+\\.js$": "babel-jest"
+    },
+    "setupFiles": [
+      "./testHelper.js"
+    ],
+    "collectCoverage": false
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -21,5 +49,8 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "prop-types": "^15.6.2"
+  }
 }
